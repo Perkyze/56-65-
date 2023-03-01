@@ -1,0 +1,359 @@
+:root{
+  --box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, .3);
+  font-family: Inter,sans-serif;
+  background-color: grey;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.explication{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  z-index: 9999;
+  background-color: #111;
+  color: white;
+}
+
+.expbtn{
+  position: absolute;
+  height: 6%;
+  width: 3%;
+  right: 1%;
+  top: 1%;
+}
+
+/*
+MINIMAP -------------------------------------
+*/
+.imgmap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 40%;
+  z-index: -1;
+   
+}
+
+#hall{
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  width: 1.2%;
+  height: 6.8%;
+  left: 14%;
+  top: 32%;
+}
+
+#dinners{
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  width: 6%;
+  height: 10%;
+  left: 11.5%;
+  top: 15%;
+}
+#dinnern{
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  width: 6%;
+  height: 7%;
+  left: 11.5%;
+  top: 25%;
+}
+
+#salon{
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  width: 4%;
+  height: 4.7%;
+  left: 11.5%;
+  top: 10.5%;
+}
+
+#jardin{
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  width: 2%;
+  height: 4.7%;
+  left: 15.5%;
+  top: 10.5%;
+}
+
+#masterbar{
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  width: 3%;
+  height: 8.5%;
+  left: 12.5%;
+  top: 2%;
+}
+
+#roomhall{
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  width: 9.5%;
+  height: 3%;
+  left: 2%;
+  top: 26%;
+}
+
+#room1{
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  width: 2.2%;
+  height: 3%;
+  left: 9.3%;
+  top: 23%;
+}
+
+#room2{
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  width: 2.4%;
+  height: 3%;
+  left: 7%;
+  top:29%;
+}
+
+#room3{
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  width: 2.6%;
+  height: 3%;
+  left: 2%;
+  top: 23%;
+}
+
+#ballroome{
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  width: 5%;
+  height: 10%;
+  left: 6.5%;
+  top: 13%;
+}
+
+#ballroomo{
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  width: 4.5%;
+  height: 10%;
+  left: 2%;
+  top: 13%;
+}
+
+/*
+-----------------------------------------
+*/
+
+.imgkey{
+  position: fixed;
+  top: 45%;
+  left: 5%;
+  width: 10%;
+  height: 10%;
+  z-index: 1;
+}
+
+.item2{
+  position: fixed;
+  top: 55%;
+  left: 5%;
+  width: 10%;
+  height: 10%;
+  z-index: 1;
+}
+
+.item3{
+  position: fixed;
+  top: 65%;
+  left: 5%;
+  width: 10%;
+  height: 10%;
+  z-index: 1;
+}
+
+.game{
+  position: fixed;
+  top: 0;
+  right: 10%;
+  width: 70%;
+  height: 70%;
+  z-index: -1;
+  background-color: black;
+}
+
+.imggame{
+  position: fixed;
+  top: 0;
+  right: 10%;
+  width: 70%;
+  height: 70%;
+  z-index: -1;
+  display: none;
+}
+
+/* .dinnersG{
+  display: none;
+}
+
+.room1G{
+  display: none;
+}
+
+.hallG{
+  display: none;
+} */
+
+/*
+FOOTER-------------------------
+*/
+
+footer{
+  display: flex;
+  position: fixed;
+  top: 70%;
+  left: 20%;
+}
+
+textarea{
+  border-style: solid;
+  box-shadow: var(--box-shadow);
+  width: 59em;
+  height: 17.5em;
+}
+
+.txtbox{
+  border-style: solid;
+  box-shadow: var(--box-shadow);
+  width: 50em;
+  height: 15em;
+  overflow: auto;
+  background-color: #fee6e3;
+}
+
+.timercss{
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  height: 60px;
+  width: 20%;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.timercss:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 60px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+/*
+BOUTON--------------------
+*/
+
+
+.btn {
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  height: 60px;
+  width: 20%;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 60px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.btn:hover:after {
+  transform: translate(0, 0);
+}
+
+.btn:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.btn:hover {
+  outline: 0;
+}
+
+.btn1{
+  position: absolute;
+  top: 60%;
+  left: 34%;
+  visibility: hidden;
+}
+.btn2{
+  position: absolute;
+  top: 60%;
+  left: 56%;
+  visibility: hidden;
+}

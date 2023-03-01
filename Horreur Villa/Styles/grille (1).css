@@ -1,0 +1,148 @@
+:root {
+    --content-width: 80%;
+}
+
+
+/***********************/
+/*        Layout       */
+/***********************/
+
+.container {
+    max-width: 1024px;
+    width: var(--content-width);
+    margin: 0 auto;
+}
+
+
+/***********************/
+/*     Grid system     */
+/***********************/
+
+
+/* Row */
+
+.row {
+    display: flex;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.spaced {
+    justify-content: space-between;
+}
+
+
+
+/* Columns */
+
+.col-1 {
+    flex-basis: 8%;
+}
+
+.col-2 {
+    flex-basis: 15%;
+}
+
+.col-3 {
+    flex-basis: 23%;
+}
+
+.col-4 {
+    flex-basis: 32%;
+}
+
+.col-5 {
+    flex-basis: 40%;
+}
+
+.col-6 {
+    flex-basis: 48%;
+}
+
+.col-7 {
+    flex-basis: 57%;
+}
+
+.col-8 {
+    flex-basis: 66%;
+}
+
+.col-9 {
+    flex-basis: 73%;
+}
+
+.col-10 {
+    flex-basis: 81%;
+}
+
+.col-11 {
+    flex-basis: 90%;
+}
+
+.col-12 {
+    flex-basis: 100%;
+}
+
+/* Tablet */
+
+@media screen and (max-width:1024px) {
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1em;
+    }
+
+    .col-1 {
+        flex-basis: 15%;
+        flex-grow: 1;
+    }
+
+    .col-2 {
+        flex-basis: 30%;
+        flex-grow: 1;
+    }
+
+    .col-3,
+    .col-4,
+    .col-5 {
+        flex-basis: 47%;
+        flex-grow: 1;
+    }
+
+    .col-6,
+    .col-7,
+    .col-8,
+    .col-9,
+    .col-10,
+    .col-11 {
+        flex-basis: 100%;
+    }
+}
+
+/* Mobile */
+
+@media screen and (max-width:768px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .col-1 {
+        flex-basis: 30%;
+        flex-grow: 1;
+    }
+
+    .col-2 {
+        flex-basis: 48%;
+    }
+
+    .col-3,
+    .col-4,
+    .col-5 {
+        flex-basis: 100%;
+    }
+}

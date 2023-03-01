@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/grille.css">
+    <script src="scripts/main.js" defer></script>
+    <title>Horreur Villa</title>
+</head>
+<body>
+
+    <header>
+        
+    </header>
+
+    <main>
+
+        <!-- explication -->
+        <div class="explication" id="explication1"> 
+            <img src="images/tuto.jpg" alt="page tutoriel">
+            <button class="expbtn" onclick="removeElement()">✘</button>
+        </div>
+        
+        <div>
+
+        </div>
+
+        <!-- miniap -->
+        <div class="map">
+            <div class="pieces" id="hall" data-deplaceable="true" data-barrer="false"></div>
+            <div class="pieces" id="dinnern" data-deplaceable="true" data-barrer="false"></div>
+            <div class="pieces" id="dinners" data-deplaceable="true" data-barrer="false"></div>
+            <div class="pieces" id="salon" data-deplaceable="true" data-barrer="false"></div>
+            <div class="pieces" id="jardin" data-deplaceable="true" data-barrer="false"></div>
+            <div class="pieces" id="masterbar" data-deplaceable="true" data-barrer="false"></div>
+            <div class="pieces" id="roomhall" data-deplaceable="true" data-barrer="false"></div>
+            <div class="pieces" id="room1" data-deplaceable="true" data-barrer="false"></div>
+            <div class="pieces" id="room2" data-deplaceable="true" data-barrer="false"></div>
+            <div class="pieces" id="room3" data-deplaceable="true" data-barrer="false"></div>
+            <div class="pieces" id="ballroome" data-deplaceable="true" data-barrer="false"></div>
+            <div class="pieces" id="ballroomo" data-deplaceable="true" data-barrer="false"></div>
+
+            <img class="imgmap" src="images/map.png" alt="map test">
+        </div>
+        <div class="map">
+            <img class="imgmap" src="images/map.png" alt="map test">
+        </div>
+
+        <!-- game -->
+        <div class="game">
+            <img class="imggame" src="images/gametest.jpg" alt="game test">
+            <img class="imggame hallG" id="hall-photo" src="images/hall.webp" alt="hall">
+            <img class="imggame dinnernG" id="dinnern-photo" src="images/dinnern.png" alt="dinnern">
+            <img class="imggame dinnersG" id="dinners-photo" src="images/dinners.png" alt="dinners">
+            <img class="imggame salonG" id="salon-photo" src="images/salon.webp" alt="salon">
+            <img class="imggame jardinG" id="jardin-photo" src="images/jardin.jpg" alt="jardin">
+            <img class="imggame masterbarG" id="masterbar-photo" src="images/masterbar.webp" alt="masterbar">
+            <img class="imggame roomhallG" id="roomhall-photo" src="images/hall.webp" alt="roomhall">
+            <img class="imggame room1G" id="room1-photo" src="images/room1.png" alt="room1">
+            <img class="imggame room2G" id="room2-photo" src="images/room2.webp" alt="room2">
+            <img class="imggame room3G" id="room3-photo" src="images/room3.jpg" alt="room3">
+            <img class="imggame ballroomeG" id="ballroome-photo" src="images/ballroome.jfif" alt="ballroome">
+            <img class="imggame ballroomoG" id="ballroomo-photo" src="images/ballroomo.jpeg" alt="ballroomo">
+        </div>
+
+        <a type="button" class="btn1 btn" onclick="showMsg('btn1')"> choix 1 </a>
+        <a type="button" class="btn2 btn" onclick="showMsg('btn2')"> choix 2 </a>
+
+        <!-- items -->
+        <div class="item1">
+            <img class="imgkey" src="images/keytest.png" alt="key test">
+        </div>
+        <div class="item2">
+            <img class="item2" src="images/keytest.png" alt="key test">
+        </div>
+        <div class="item3">
+            <img class="item3" src="images/keytest.png" alt="key test">
+        </div>
+
+
+    </main>
+
+    <footer>
+        <div class="txtbox">
+            This is the start
+            <br>_<br>_<br>_<br>_<br>_<br>_<br>_<br>_<br>_<br>_<br>_<br>_<br>_<br>_<br>_<br>_<br>_<br>_<br>_<br>_<br>
+            This is the end
+        </div>
+
+        <div class="timercss">
+            <div id="timer">Time Remaining:</div>
+        </div>
+
+        <a type="button" class="btn changermonde" onclick="showMsg('Hello')"> Changer de monde </a>
+
+        </script>
+    </footer>
+
+</body>
+</html>
