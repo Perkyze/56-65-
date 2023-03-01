@@ -1,6 +1,6 @@
 //AJOUTER FILE HEADER
 
-
+let numeroPiece;
 
 //Save que tu a fait le tuto
 const tuto1 = localStorage.getItem('tuto')
@@ -24,13 +24,10 @@ elementclickables.forEach((element) => element.addEventListener("click", deplace
 
 
 function deplacer(e) {
-    let numeroPiece = e.target.id;
+     
+    numeroPiece = e.target.id;
     let estDeplaceable = e.target.dataset.deplaceable;
     let estBarrer = e.target.dataset.barrer;
-
-    if(numeroPiece == "hall"){
-        
-    }
 
     if (estDeplaceable == "false") {
         console.log(numeroPiece + " est verrouiller");
@@ -42,6 +39,37 @@ function deplacer(e) {
         document.querySelector("#"+e.target.id+"-photo").style.display = "block";
         document.querySelector("#"+e.target.id).style.backgroundColor = "white";
         console.log(numeroPiece);
+    }
+
+    if(numeroPiece == "hall"){
+        elementclickables.forEach((piece)=> {
+           if(piece.id == "dinnern"){
+            piece.dataset.deplaceable = "true";
+           }
+           else{
+            piece.dataset.deplaceable = "false";
+           }
+        })
+    }
+    if(numeroPiece == "dinnern"){
+        elementclickables.forEach((piece)=> {
+           if(piece.id == "dinners" || piece.id == "hall" || piece.id == "roomhall"){
+            piece.dataset.deplaceable = "true";
+           }
+           else{
+            piece.dataset.deplaceable = "false";
+           }
+        })
+    }
+    if(numeroPiece == "dinners"){
+        elementclickables.forEach((piece)=> {
+           if(piece.id == "dinners" || piece.id == "hall" || piece.id == "roomhall"){
+            piece.dataset.deplaceable = "true";
+           }
+           else{
+            piece.dataset.deplaceable = "false";
+           }
+        })
     }
 
 /*     if (numeroPiece == 3) {
@@ -75,6 +103,8 @@ var x = setInterval(function() {
         document.getElementById("timer").innerHTML = "MORT";
     }
 }, 1000);
+
+
 
 /*  // Get the stored timer value
 var storedTimer = localStorage.getItem("timer");
