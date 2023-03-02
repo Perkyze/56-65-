@@ -37,7 +37,7 @@ function deplacer(e) {
     } else{
         gamePhoto.forEach((image) => image.style.display = "none")
         document.querySelector("#"+e.target.id+"-photo").style.display = "block";
-        document.querySelector("#"+e.target.id).style.backgroundColor = "white";
+        document.querySelector("#"+e.target.id).style.backgroundColor = "grey";
         console.log(numeroPiece);
     }
 
@@ -63,7 +63,97 @@ function deplacer(e) {
     }
     if(numeroPiece == "dinners"){
         elementclickables.forEach((piece)=> {
-           if(piece.id == "dinners" || piece.id == "hall" || piece.id == "roomhall"){
+           if(piece.id == "dinnern" || piece.id == "ballroome" || piece.id == "salon"){
+            piece.dataset.deplaceable = "true";
+           }
+           else{
+            piece.dataset.deplaceable = "false";
+           }
+        })
+    }
+    if(numeroPiece == "salon"){
+        elementclickables.forEach((piece)=> {
+           if(piece.id == "masterbar" || piece.id == "dinners" || piece.id == "jardin"){
+            piece.dataset.deplaceable = "true";
+           }
+           else{
+            piece.dataset.deplaceable = "false";
+           }
+        })
+    }
+    if(numeroPiece == "masterbar"){
+        elementclickables.forEach((piece)=> {
+           if(piece.id == "salon"){
+            piece.dataset.deplaceable = "true";
+           }
+           else{
+            piece.dataset.deplaceable = "false";
+           }
+        })
+    }
+    if(numeroPiece == "jardin"){
+        elementclickables.forEach((piece)=> {
+           if(piece.id == "salon"){
+            piece.dataset.deplaceable = "true";
+           }
+           else{
+            piece.dataset.deplaceable = "false";
+           }
+        })
+    }
+    if(numeroPiece == "ballroome"){
+        elementclickables.forEach((piece)=> {
+           if(piece.id == "ballroomo" || piece.id == "dinners"){
+            piece.dataset.deplaceable = "true";
+           }
+           else{
+            piece.dataset.deplaceable = "false";
+           }
+        })
+    }
+    if(numeroPiece == "ballroomo"){
+        elementclickables.forEach((piece)=> {
+           if(piece.id == "ballroome"){
+            piece.dataset.deplaceable = "true";
+           }
+           else{
+            piece.dataset.deplaceable = "false";
+           }
+        })
+    }
+    if(numeroPiece == "roomhall"){
+        elementclickables.forEach((piece)=> {
+           if(piece.id == "room1" || piece.id == "room2" || piece.id == "room3" || piece.id == "dinnern"){
+            piece.dataset.deplaceable = "true";
+           }
+           else{
+            piece.dataset.deplaceable = "false";
+           }
+        })
+    }
+    if(numeroPiece == "room1"){
+        elementclickables.forEach((piece)=> {
+           if(piece.id == "roomhall"){
+            piece.dataset.deplaceable = "true";
+           }
+           else{
+            piece.dataset.deplaceable = "false";
+           }
+        })
+    }
+    if(numeroPiece == "room2"){
+        elementclickables.forEach((piece)=> {
+           if(piece.id == "roomhall"){
+            piece.dataset.deplaceable = "true";
+           }
+           else{
+            piece.dataset.deplaceable = "false";
+           }
+        })
+    }
+    if(numeroPiece == "room3"){
+        elementclickables.forEach((piece)=> {
+           if(piece.id == "roomhall"){
             piece.dataset.deplaceable = "true";
            }
            else{
