@@ -1,6 +1,8 @@
 //AJOUTER FILE HEADER
 
 let numeroPiece;
+let cle1inventaire = "false"
+
 
 //Save que tu a fait le tuto
 const tuto1 = localStorage.getItem('tuto')
@@ -10,10 +12,47 @@ if(tuto1=="true"){
 //Enlever page comment jouer
 function removeElement() {  
     document.getElementById("explication1").style.display = "none"
-    localStorage.setItem('tuto', 'true');
+    /* localStorage.setItem('tuto', 'true'); */
+}
+function showElement() {  
+    document.getElementById("explication1").style.display = "block"
+   /*  localStorage.setItem('tuto', 'false'); */
 }
 
-/*
+const play1 = localStorage.getItem('menu')
+if(play1=="true"){
+    document.getElementById("accueil1").style.display = "none"
+
+}
+function play() {  
+    document.getElementById("accueil1").style.display = "none"
+    /* localStorage.setItem('menu', 'true'); */
+}
+
+
+function typeWriter(texte,vitesse,position) {
+    if(position==0){
+        /* document.getElementById("textebox").innerHTML += "\n"; */
+        
+        let br = document.createElement("br");
+        document.getElementById("textebox").appendChild(br);
+    }
+    if (position < texte.length) {
+      document.getElementById("textebox").innerHTML += texte.charAt(position);
+      position++;
+      setTimeout(function(){
+        typeWriter(texte,vitesse,position)
+      }, vitesse);
+    }
+  }
+
+function cle1click() {
+    document.querySelector(".itemcle1").style.display = "block";
+    cle1inventaire="true";
+    console.log(cle1inventaire);
+}
+
+  /*
 DÉPLACEMENT MINIMAP -------
 */
 const gamePhoto = document.querySelectorAll(".imggame");
@@ -36,12 +75,21 @@ function deplacer(e) {
         console.log(numeroPiece + " est barrer"); 
     } else{
         gamePhoto.forEach((image) => image.style.display = "none")
+        elementclickables.forEach((piece)=> {
+            if (piece.classList.contains("piece-presente")){
+                piece.classList.remove("piece-presente");
+                piece.classList.add("piece-visite");
+                console.log(piece)
+            }
+        })
         document.querySelector("#"+e.target.id+"-photo").style.display = "block";
-        document.querySelector("#"+e.target.id).style.backgroundColor = "grey";
+        document.querySelector("#"+e.target.id).classList.add("piece-presente");
         console.log(numeroPiece);
     }
 
+    
     if(numeroPiece == "hall"){
+        typeWriter("Tu es dans le hall la porte est bloquée... C'est bizarre.", 40,0)
         elementclickables.forEach((piece)=> {
            if(piece.id == "dinnern"){
             piece.dataset.deplaceable = "true";
@@ -52,16 +100,23 @@ function deplacer(e) {
         })
     }
     if(numeroPiece == "dinnern"){
+        
         elementclickables.forEach((piece)=> {
            if(piece.id == "dinners" || piece.id == "hall" || piece.id == "roomhall"){
             piece.dataset.deplaceable = "true";
+
            }
            else{
-            piece.dataset.deplaceable = "false";
+            piece.dataset.deplaceable = "false";           
            }
         })
     }
+    if(numeroPiece != "dinners"){
+        document.querySelector(".cle1").style.display = "none";
+    }
+
     if(numeroPiece == "dinners"){
+        document.querySelector(".cle1").style.display = "block";
         elementclickables.forEach((piece)=> {
            if(piece.id == "dinnern" || piece.id == "ballroome" || piece.id == "salon"){
             piece.dataset.deplaceable = "true";
