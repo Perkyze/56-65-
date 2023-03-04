@@ -3,6 +3,7 @@
 //variables
 let numeroPiece;
 let cle1Inventaire = "false";
+let cle2Inventaire = "false";
 intro="false";
 firsttime = "true";
 room1FirstTime = "true";
@@ -10,23 +11,47 @@ journalInventaire = "false";
 balFirst = "true";
 balEFirst = "true";
 lampe = "false";
+firstPrompt = "true"
 
+function changeScr() {
+if(cle1Inventaire == "true"){
+    document.getElementById("masterbar-photo").src="images/masterbarouvert.png";
+    console.log("ouvert")
+    document.querySelector(".itemcle1").style.display = "none";
+    cle1Inventaire
+    if(lampe == "true"){
+        document.querySelector(".armoire").style.display = "none";
+        document.getElementById("masterbar-photo").src="images/masterbarcle.png";
+        document.querySelector(".cle2").style.display = "block";
+        cle1Inventaire = "false"
+        console.log("cle2")
+    }
+}else if (firstPrompt == "true"){    
+    typeWriter("C'est barré à clé.",1,0)
+    firstPrompt = "false"
+}
+}
 
+function cle2click(){
+    document.querySelector(".cle2").style.display = "none";
+    cle2Inventaire = "true";
+    typeWriter("Tu as trouvé un clé",1,0)
+}
 
 //Save que tu a fait le tuto
 const tuto1 = localStorage.getItem('tuto')
 if(tuto1=="true"){
-    document.getElementById("explication1").style.display = "none"
+    document.getElementById("explication1").style.display = "none";
 }
 
 
 const play1 = localStorage.getItem('menu')
 if(play1=="true"){
-    document.getElementById("accueil1").style.display = "none"
+    document.getElementById("accueil1").style.display = "none";
 
 }
 function play() {  
-    document.getElementById("accueil1").style.display = "none"
+    document.getElementById("accueil1").style.display = "none";
     /* localStorage.setItem('menu', 'true'); */
 }
 

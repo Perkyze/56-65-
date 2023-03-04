@@ -274,10 +274,10 @@ MINIMAP -------------------------------------
 .cle1{
   display: none;
   position: absolute;
-  left: 38%;
-  top: 64%;
-  height: 14%;
-  width: 10%;
+  left: 33%;
+  top: 51%;
+  height: 24%;
+  width: 7%;
   z-index: 1;
   background-color: gray;
   opacity: 0%;
@@ -302,6 +302,30 @@ MINIMAP -------------------------------------
   top: 45%;
   height: 10%;
   width: 2%;
+  z-index: 1;
+  background-color: gray;
+  opacity: 0%;
+}
+
+.armoire{
+  display: block;
+  position: absolute;
+  left: 5%;
+  top: 10%;
+  height: 60%;
+  width: 15%;
+  z-index: 1;
+  background-color: gray;
+  opacity: 0%;
+}
+
+.cle2{
+  display: none;
+  position: absolute;
+  left: 11.3%;
+  top: 62%;
+  height: 7%;
+  width: 5%;
   z-index: 1;
   background-color: gray;
   opacity: 0%;
