@@ -17,22 +17,25 @@
 
     <main>
 
-        <!-- explication -->
-        <div class="explication" id="explication1"> 
-            <img src="images/comment jouer.jpg" alt="page tutoriel">
-            <button class="expbtn" onclick="removeElement()">✘</button>
-        </div>
+        
 
-            <div class="accueil" id="accueil1">             
+        <div class="accueil" id="accueil1">         
             <img class="logomenu" src="images/logo.png" alt="game test">
             <button class="btnplay btn" onclick="play()">JOUER</button>
             <button class="btnplay btn" onclick="showElement()">COMMENT JOUER</button>
-            </div>
-        
-
-        <div>
-
         </div>
+        
+        <!-- Comment jouer button -->
+        <div class="explication" id="explication1"> 
+            <img id="explication-photo" src="images/comment jouer.jpg" alt="page tutoriel">
+            <button class="expbtn" onclick="removeElement()">✘</button>
+        </div>
+        <!-- Histoire button -->
+        <div class="histoire" id="histoire2"> 
+            <img id="histoire-photo2" src="images/context2.webp" alt="histoire">
+            <button class="expbtn" onclick="removeStory()">✘</button>
+        </div>
+            
 
         <!-- miniap -->
         <div class="map">
@@ -61,24 +64,30 @@
             <img class="imggame hallG" id="hall-photo" src="images/hall.webp" alt="hall">
             <img class="imggame dinnernG" id="dinnern-photo" src="images/dinnern.png" alt="dinnern">
 
-            <div class="enigme cle1" onclick="cle1click()">
-                
-            </div>
+            <div class="cle1" onclick="cle1click()"></div>
+
+            <img class="imggame" id="histoire-photo" src="images/context.webp" alt="histoire">
 
             <img class="imggame dinnersG" id="dinners-photo" src="images/dinners.png" alt="dinners">
             <img class="imggame salonG" id="salon-photo" src="images/salon.png" alt="salon">
             <img class="imggame jardinG" id="jardin-photo" src="images/jardin.jpg" alt="jardin">
-            <img class="imggame masterbarG" id="masterbar-photo" src="images/masterbar.png" alt="masterbar">
+            <img class="imggame masterbarG" id="masterbar-photo" src="images/masterbar.webp" alt="masterbar">
+
+            <div class="journal" onclick="journalClick()"></div>
+
             <img class="imggame roomhallG" id="roomhall-photo" src="images/hall.webp" alt="roomhall">
             <img class="imggame room1G" id="room1-photo" src="images/room1.png" alt="room1">
             <img class="imggame room2G" id="room2-photo" src="images/room2.webp" alt="room2">
+
+            <div class="lampe" onclick="lampeClick()"></div>
+
             <img class="imggame room3G" id="room3-photo" src="images/room3.jpg" alt="room3">
             <img class="imggame ballroomeG" id="ballroome-photo" src="images/ballroome.jfif" alt="ballroome">
             <img class="imggame ballroomoG" id="ballroomo-photo" src="images/ballroomo.jpeg" alt="ballroomo">
         </div>
 
-        <a type="button" class="btn1 btn" onclick="showMsg('btn1')"> choix 1 </a>
-        <a type="button" class="btn2 btn" onclick="showMsg('btn2')"> choix 2 </a>
+        <a type="button" class="ouibtn btn" id="ouibutton" onclick="showTexte1()">Faire le moins de bruit possible et se cacher</a>
+        <a type="button" class="nonbtn btn" id="nonbutton" onclick="showDeath1()">S’enfuir en courant vers la porte</a>
 
         <!-- items -->
         <div class="item1">
@@ -91,6 +100,12 @@
             <img class="item3" src="images/keytest.png" alt="key test">
         </div>
 
+        <div class="deathScreen">
+            <p class="deathText">
+                Vous vous mettez à courir de toute votre force vers la sortie de la salle, le monstre réalisa la présence d’un intrus dans la salle et se mit à bougé bien plus vite. Grâce au bruit de pas, il vous attrapa par les jambes, vous étier maintenant suspendu dans les air à la merci du monstre. Vous vous retrouvez au-dessus du visage du monstre, il ouvrit la bouche et vous lâcha.
+            </p>
+            <a type="button" class="btnrejouer btn" onclick="rejouer()"> Rejouer </a>
+        </div>
 
     </main>
 
@@ -99,13 +114,14 @@
            
         </div>
 
-        <div class="timercss">
+        <!-- <div class="timercss">
             <div id="timer">Time Remaining:</div>
-        </div>
+        </div> -->
 
-        <a type="button" class="btn changermonde" onclick="showElement()">Comment jouer</a>
+        <a type="button" class="btn" onclick="showElement()">Comment jouer</a>
 
-        </script>
+        <a type="button" class="btn" onclick="showStory()">Histoire</a>
+
     </footer>
 
 </body>

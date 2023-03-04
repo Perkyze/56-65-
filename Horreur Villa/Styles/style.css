@@ -21,6 +21,34 @@ body{
   color: white;
 }
 
+#explication-photo{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.histoire{
+  display: none;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  z-index: 99;
+  background-color: #111;
+  z-index: 1;
+}
+
+#histoire-photo2{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#histoire-photo{
+  display: block;
+}
+
 .accueil{
   display: block;
   width: 100%;
@@ -53,6 +81,28 @@ body{
   top: 1%;
 }
 
+.deathScreen{
+  display: none;
+  display: absolute;
+  background-color: rgb(78, 10, 10);
+  font-size: 60px;
+  text-align: center;
+  width: 100%;
+  height: 1080px;
+  z-index: 99999;
+}
+
+.deathText{
+  margin: 0;
+  padding: 10%;
+}
+
+.btnrejouer{
+  display: none;
+  position: absolute !important;
+  top: 80%;
+  left: 40%;
+}
 
 /*
 MINIMAP -------------------------------------
@@ -66,9 +116,9 @@ MINIMAP -------------------------------------
   left: 0;
   width: 20%;
   height: 40%;
-  z-index: -2;
-   
+  z-index: -2; 
 }
+
 
 #hall{
   background-color: gray;
@@ -205,6 +255,22 @@ MINIMAP -------------------------------------
 -----------------------------------------
 */
 
+#ouibutton{
+  display: none;
+  position: absolute;
+  font-size: 30px;
+  top: 60%;
+  left: 34%;
+}
+
+#nonbutton{
+  display: none;
+  position: absolute;
+  font-size: 30px;
+  top: 60%;
+  left: 56%;
+}
+
 .cle1{
   display: none;
   position: absolute;
@@ -212,6 +278,30 @@ MINIMAP -------------------------------------
   top: 64%;
   height: 14%;
   width: 10%;
+  z-index: 1;
+  background-color: gray;
+  opacity: 0%;
+}
+
+.journal{
+  display: none;
+  position: absolute;
+  left: 42%;
+  top: 45%;
+  height: 4%;
+  width: 5%;
+  z-index: 1;
+  background-color: gray;
+  opacity: 0%;
+}
+
+.lampe{
+  display: none;
+  position: absolute;
+  left: 29%;
+  top: 45%;
+  height: 10%;
+  width: 2%;
   z-index: 1;
   background-color: gray;
   opacity: 0%;
@@ -411,17 +501,4 @@ BOUTON--------------------
 
 .btn:hover {
   outline: 0;
-}
-
-.btn1{
-  position: absolute;
-  top: 60%;
-  left: 34%;
-  visibility: hidden;
-}
-.btn2{
-  position: absolute;
-  top: 60%;
-  left: 56%;
-  visibility: hidden;
 }
