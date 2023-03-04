@@ -9,6 +9,7 @@ room1FirstTime = "true";
 journalInventaire = "false";
 balFirst = "true";
 balEFirst = "true";
+lampe = "false";
 
 
 
@@ -68,9 +69,9 @@ function rejouer(){
 }
 
 
- /*
+/*
 TYPING SCRIPT ------------------------
-  */
+*/
 
 function typeWriter(texte,vitesse,position) {
     if(position==0){
@@ -90,9 +91,9 @@ function typeWriter(texte,vitesse,position) {
     objDiv.scrollTop = objDiv.scrollHeight;
   }
 
-  /*
+/*
 ENIGME ------------------------
-  */
+*/
 function cle1click() {
     document.querySelector(".itemcle1").style.display = "block";
     if(cle1Inventaire != "true"){
@@ -107,11 +108,16 @@ function journalClick() {
     if(journalInventaire != "true"){
         typeWriter("En fouillant la chambre du maitre d’hôtel, vous trouvez une page d’un hebdomadaire. Il se rapporte à un incident qui a eu lieu en 1875, un homme nommés Henry Tòth fut pendu pour une série de meurtre d’enfant innocent. En continuant de lire vous observer les lettres commençais lentement à fondre jusqu’à qu’elles disparaissent complétement de la page. Soudainement, vous entendez du bruit provenant de la salle de bal.", 1, 0);
         journalInventaire="true";
-        document.querySelector(".journal").style.display = "none";
+        document.querySelector(".lampe").style.display = "none";
     }
 
 }
 
+function lampeClick(){
+    typeWriter("Vous avez trouvé une lampe torche", 1, 0);
+        lampe="true";
+        document.querySelector(".lampe").style.display = "none";
+}
   /*
 DÉPLACEMENT MINIMAP -------
 */
@@ -290,7 +296,15 @@ function deplacer(e) {
            }
         })
     }
+
+    if(numeroPiece != "room2"){
+        document.querySelector(".lampe").style.display = "none";
+        }
+
     if(numeroPiece == "room2"){
+        if(lampe == "false"){
+            document.querySelector(".lampe").style.display = "block";
+        }
         elementclickables.forEach((piece)=> {
            if(piece.id == "roomhall"){
             piece.dataset.deplaceable = "true";
@@ -300,7 +314,11 @@ function deplacer(e) {
            }
         })
     }
+
+   
+
     if(numeroPiece == "room3"){
+        
         elementclickables.forEach((piece)=> {
            if(piece.id == "roomhall"){
             piece.dataset.deplaceable = "true";
