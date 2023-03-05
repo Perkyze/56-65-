@@ -216,7 +216,7 @@ function lampeClick(){
 
 function coffreClick(){
     if(cle2Inventaire == "true"){
-        typeWriter("À l’intérieur vous trouvait un journal intime abimé. Dans celui-ci vous apprenez l’histoire d’amour entre Bence Korhonen et Henry Tòth le tueur en série. Vous y trouvez aussi l’affreux récit détaillé des meurtres des enfants, et du plaisir que le meurtrier pris à tuer ses victimes. Vous pensez à haute voix que Henry Tòth est un monstre. D’un seul coup, la radio qui ne marchait pas jusque-là se mit soudainement à marcher. Vous entendez une voix à l’intérieur répétant « Ce n’était pas moi, non c’était moi » jusqu’à qu’elle dysfonctionne.",5,0)
+        typeWriter("Le code a bien fonction. À l’intérieur vous trouvez un journal intime abimé. Dans celui-ci vous apprenez l’histoire d’amour entre Bence Korhonen et Henry Tòth le tueur en série. Vous y trouvez aussi l’affreux récit détaillé des meurtres des enfants, et du plaisir que le meurtrier pris à tuer ses victimes. Vous pensez à haute voix que Henry Tòth est un monstre. D’un seul coup, la radio qui ne marchait pas jusque-là se mit soudainement à marcher. Vous entendez une voix à l’intérieur répétant « Ce n’était pas moi, non c’était moi » jusqu’à qu’elle dysfonctionne.",5,0)
 
         document.querySelector(".coffre").style.display = "none";
         cle2Inventaire = "false";
@@ -362,7 +362,7 @@ function deplacer(e) {
     //BALLROOME
     if(numeroPiece == "ballroome"){
         if(balFirst == "true" && journalInventaire=="true"){
-            typeWriter("Soudainement, vous entendez du bruit provenant de la salle de bal. Vous vous diriger vers la sources jusqu’à que Vous vous retrouviez nez à nez avec un horrible monstre. Son corps était élancé et il avait une peau grise brulée, là où il devrait avoir des yeux et une bouche, il n’y avait rien. Le monstre ne semblant pas réalisé que vous vous trouvez ici, se mit à bouger vers votre direction petit à petit, son bras s’allonge de plus en plus vers votre direction. ",1,0);
+            typeWriter("Vous vous diriger vers la sources jusqu’à que Vous vous retrouviez nez à nez avec un horrible monstre. Son corps était élancé et il avait une peau grise brulée, là où il devrait avoir des yeux et une bouche, il n’y avait rien. Le monstre ne semblant pas réalisé que vous vous trouvez ici, se mit à bouger vers votre direction petit à petit, son bras s’allonge de plus en plus vers votre direction. ",1,0);
             document.getElementById("ouibutton").style.display = "flex";
             document.getElementById("nonbutton").style.display = "flex";
             balFirst = "false";           
