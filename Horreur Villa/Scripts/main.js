@@ -216,7 +216,7 @@ function lampeClick(){
 
 function coffreClick(){
     if(cle2Inventaire == "true"){
-        typeWriter("Le code a bien fonction. À l’intérieur vous trouvez un journal intime abimé. Dans celui-ci vous apprenez l’histoire d’amour entre Bence Korhonen et Henry Tòth le tueur en série. Vous y trouvez aussi l’affreux récit détaillé des meurtres des enfants, et du plaisir que le meurtrier pris à tuer ses victimes. Vous pensez à haute voix que Henry Tòth est un monstre. D’un seul coup, la radio qui ne marchait pas jusque-là se mit soudainement à marcher. Vous entendez une voix à l’intérieur répétant « Ce n’était pas moi, non c’était moi » jusqu’à qu’elle dysfonctionne.",5,0)
+        typeWriter("Le code a bien fonction. À l’intérieur vous trouvez un journal intime abimé. Dans celui-ci vous apprenez l’histoire d’amour entre Bence Korhonen et Henry Tòth le tueur en série. Vous y trouvez aussi l’affreux récit détaillé des meurtres des enfants, et du plaisir que le meurtrier pris à tuer ses victimes. Vous pensez à haute voix que Henry Tòth est un monstre. D’un seul coup, la radio qui ne fonctionnais pas jusque-là se mit soudainement à fonctionner. Vous entendez une voix à l’intérieur répétant « Ce n’était pas moi, non c’était moi » jusqu’à qu’elle dysfonctionne.",5,0)
 
         document.querySelector(".coffre").style.display = "none";
         cle2Inventaire = "false";
@@ -408,10 +408,6 @@ function deplacer(e) {
 
     //ROOM1
     if(numeroPiece == "room1"){
-       /*  if (room1FirstTime == "true"){
-        typeWriter("Vous semblez être seul dans ce manoir, vous ne trouvai aucune âme vivante malgré vos recherches, épuiser, vous vous reposez dans votre chambre d’invitée. Durant votre courte sieste, vous faite un rêve à propos de vous enfant ouvrant l’une des portes du manoir, au-delà de cette porte vous voyais la scène d’autre enfant piégé sous un trappe en pleur. Vous vous réveiller de ce cauchemar, toujours dans le manoir. Ne trouvant toujours aucune âme vivante, vous vous mettez à la recherche d’une sortie. ", 0.5, 0)
-            room1FirstTime = "false";
-        } */
         elementclickables.forEach((piece)=> {
            if(piece.id == "roomhall"){
             piece.dataset.deplaceable = "true";
@@ -454,10 +450,6 @@ function deplacer(e) {
            }
         })
     }
-
-/*     if (numeroPiece == 3) {
-        deplacerPiece3();
-    } */
 }
 
 /* 
