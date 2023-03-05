@@ -11,31 +11,34 @@ journalInventaire = "false";
 balFirst = "true";
 balEFirst = "true";
 lampe = "false";
-firstPrompt = "true"
+firstPrompt = "true";
+armoireUnlock = "false";
+cle1Used = "false";
+coffreUnlocked = "false";
+endBtn = 0;
+
 
 function changeScr() {
-if(cle1Inventaire == "true"){
+if(cle1Inventaire == "true" && lampe == "false"){
     document.getElementById("masterbar-photo").src="images/masterbarouvert.png";
     console.log("ouvert")
     document.querySelector(".itemcle1").style.display = "none";
-    cle1Inventaire
-    if(lampe == "true"){
-        document.querySelector(".armoire").style.display = "none";
-        document.getElementById("masterbar-photo").src="images/masterbarcle.png";
-        document.querySelector(".cle2").style.display = "block";
-        cle1Inventaire = "false"
-        console.log("cle2")
-    }
+    typeWriter("Il fait très sombre êtes vous sûr de vouloir y aller?",2,0);
+    document.getElementById("yesbutton").style.display = "block";
+    document.getElementById("nobutton").style.display = "block";
+    armoireUnlock = "true";
+    cle1Used = "true";
+}else if(cle1Inventaire == "true" || armoireUnlock == "true" && lampe == "true"){
+    document.querySelector(".itemcle1").style.display = "none";
+    document.querySelector(".armoire").style.display = "none";
+    document.getElementById("masterbar-photo").src="images/masterbarcle.webp";
+    document.querySelector(".cle2").style.display = "block";
+    cle1Inventaire = "false"
+    
 }else if (firstPrompt == "true"){    
-    typeWriter("C'est barré à clé.",1,0)
-    firstPrompt = "false"
+    typeWriter("C'est barré à clé.",1,0);
+    firstPrompt = "false";
 }
-}
-
-function cle2click(){
-    document.querySelector(".cle2").style.display = "none";
-    cle2Inventaire = "true";
-    typeWriter("Tu as trouvé un clé",1,0)
 }
 
 //Save que tu a fait le tuto
@@ -67,11 +70,9 @@ function removeStory() {
 //Enlever page comment jouer
 function removeElement() {  
     document.getElementById("explication1").style.display = "none"
-    /* localStorage.setItem('tuto', 'true'); */
 }
 function showElement() {  
     document.getElementById("explication1").style.display = "block"
-   /*  localStorage.setItem('tuto', 'false'); */
 }
 
  /*
@@ -79,18 +80,77 @@ EVENT ------------------------
   */
 function showTexte1(){
     typeWriter("Vous vous êtes mis à couvert derrière l’un des piliers de la salle de bal vous bouchant la bouche et en vous recroquevillant sur vous-même pour faire le moins de bruit de possible. Après un certain moment le monstre se mit à partir et vous sortez de votre cachette.",2,0);
-    document.getElementById("ouibutton").style.display = "none"
-    document.getElementById("nonbutton").style.display = "none"
+    document.getElementById("ouibutton").style.display = "none";
+    document.getElementById("nonbutton").style.display = "none";
 }
 function showDeath1(){
-    document.getElementById("ouibutton").style.display = "none"
-    document.getElementById("nonbutton").style.display = "none"
+    document.getElementById("ouibutton").style.display = "none";
+    document.getElementById("nonbutton").style.display = "none";
     document.querySelector(".deathScreen").style.display = "block";
+    document.querySelector(".btnfooter").style.visibility = "hidden";
 }
 function rejouer(){
     document.querySelector(".deathScreen").style.display = "none";
     document.querySelector(".btnrejouer").style.display = "none";
     window.location.href=window.location.href;
+}
+
+function showTexte2(){
+    typeWriter("Vous pourrez toujours y revenir plus tard",2,0);
+    document.getElementById("yesbutton").style.display = "none";
+    document.getElementById("nobutton").style.display = "none";
+}
+function showDeath2(){
+    document.getElementById("yesbutton").style.display = "none";
+    document.getElementById("nobutton").style.display = "none";
+    document.querySelector(".deathScreen2").style.display = "block";
+    document.querySelector(".btnfooter").style.visibility = "hidden";
+}
+function rejouer(){
+    window.location.href=window.location.href;
+}
+function endScreen(){
+    document.querySelector(".endScreen").style.display = "block";
+    document.querySelector(".btnfooter").style.visibility = "hidden";
+}
+function next(){
+    if(endBtn== "0"){
+        document.querySelector(".endText1").style.display = "none";
+        document.querySelector(".endText2").style.display = "block";
+        document.querySelector(".endText3").style.display = "none";
+        document.querySelector(".endText4").style.display = "none";
+        endBtn ++;
+    }else if(endBtn == "1"){
+        document.querySelector(".endText1").style.display = "none";
+        document.querySelector(".endText2").style.display = "none";
+        document.querySelector(".endText3").style.display = "block";
+        document.querySelector(".endText4").style.display = "none";
+        endBtn ++;
+    }else if(endBtn == "2"){
+        document.querySelector(".endText1").style.display = "none";
+        document.querySelector(".endText2").style.display = "none";
+        document.querySelector(".endText3").style.display = "none";
+        document.querySelector(".endText4").style.display = "block";
+        document.querySelector(".btnEnd").style.display = "none";
+        document.getElementById("henry").style.display = "block";
+        document.getElementById("bence").style.display = "block";
+        endBtn ++;
+    }
+}
+
+function showRevele(){
+    document.querySelector(".endText4").style.display = "none";
+    document.getElementById("henry").style.display = "none";
+    document.getElementById("bence").style.display = "none";
+    document.querySelector(".revele").style.display = "block";
+}
+
+function showCacher(){
+    document.querySelector(".endText4").style.display = "none";
+    document.getElementById("henry").style.display = "none";
+    document.getElementById("bence").style.display = "none";
+    document.querySelector(".cacher").style.display = "block";
+
 }
 
 
@@ -120,13 +180,23 @@ function typeWriter(texte,vitesse,position) {
 ENIGME ------------------------
 */
 function cle1click() {
+    if(cle1Inventaire != "true" && cle1Used == "false"){
     document.querySelector(".itemcle1").style.display = "block";
-    if(cle1Inventaire != "true"){
-    typeWriter("Tu as trouvé une clé", 20, 0);
+    typeWriter("Tu as trouvé une clé à l'intérieur de cette statue.", 20, 0);
     cle1Inventaire="true";
     document.querySelector(".cle1").style.display = "none";
     }
 }
+
+function cle2click(){
+    
+    document.querySelector(".item2img").style.display = "block";
+    document.querySelector(".cle2").style.display = "none";
+    cle2Inventaire = "true";
+    console.log("cle2 unlocked")
+    typeWriter("Tu as trouvé une note montrant un code et les mots « menteur » et « monstre » répéter sur l'entièreté de la page.",1,0)
+}
+
 
 function journalClick() {
     
@@ -143,6 +213,19 @@ function lampeClick(){
         lampe="true";
         document.querySelector(".lampe").style.display = "none";
 }
+
+function coffreClick(){
+    if(cle2Inventaire == "true"){
+        typeWriter("À l’intérieur vous trouvait un journal intime abimé. Dans celui-ci vous apprenez l’histoire d’amour entre Bence Korhonen et Henry Tòth le tueur en série. Vous y trouvez aussi l’affreux récit détaillé des meurtres des enfants, et du plaisir que le meurtrier pris à tuer ses victimes. Vous pensez à haute voix que Henry Tòth est un monstre. D’un seul coup, la radio qui ne marchait pas jusque-là se mit soudainement à marcher. Vous entendez une voix à l’intérieur répétant « Ce n’était pas moi, non c’était moi » jusqu’à qu’elle dysfonctionne.",5,0)
+
+        document.querySelector(".coffre").style.display = "none";
+        cle2Inventaire = "false";
+        coffreUnlocked = "true";
+    }
+}
+
+
+
   /*
 DÉPLACEMENT MINIMAP -------
 */
@@ -178,11 +261,13 @@ function deplacer(e) {
         console.log(numeroPiece);
     }
 
-    
+    //HALL
     if(numeroPiece == "hall"){
         if(intro != "true"){
         typeWriter("Vous vous réveiller au hall d’entrée de l’hôtel sans aucune idée de ce qui c’était passez la veille avant de vous endormir. En essayant de vous rappeler ce qui vous êtes arrivé, vous remarqué que le manoir semblé différent : les décors semblaient plus vieux qu’auparavant, et qu’il n’y avait personne au hall d’entrée, même pas un seul son en provenance des différentes pièces du manoir. Vous essayer de sortir par la porte d’entrée, mais la porte semble bloqué, c’était la même chose pour les fenêtres. De plus, en regardant à travers celle-ci il n’y avait que du brouillard. En pleine panique, vous vous aventuré dans le manoir afin de trouver au moins le maitre d’hôtel. Pendant votre recherche, vous avez entendu un son provenant de la chambre du maitre au nord de l'hôtel ", 0.5,0);
         intro="true";
+        document.querySelector(".txtbox").style.display = "block";
+        document.querySelector(".btnfooter").style.visibility = "visible";
         }
         elementclickables.forEach((piece)=> {
            if(piece.id == "dinnern"){
@@ -193,8 +278,9 @@ function deplacer(e) {
            }
         })
     }
+
+    //DINNERN
     if(numeroPiece == "dinnern"){
-        
         elementclickables.forEach((piece)=> {
            if(piece.id == "dinners" || piece.id == "hall" || piece.id == "roomhall"){
             piece.dataset.deplaceable = "true";
@@ -206,8 +292,11 @@ function deplacer(e) {
         })
     }
     
-
+    //DINNERS
     if(numeroPiece == "dinners"){
+        if(numeroPiece == "dinners" && coffreUnlocked == "true"){
+            endScreen();
+        }
         elementclickables.forEach((piece)=> {
            if(piece.id == "dinnern" || piece.id == "ballroome" || piece.id == "salon"){
             piece.dataset.deplaceable = "true";
@@ -217,6 +306,8 @@ function deplacer(e) {
            }
         })
     }
+
+    //SALON
     if(numeroPiece == "salon"){
         elementclickables.forEach((piece)=> {
            if(piece.id == "masterbar" || piece.id == "dinners" || piece.id == "jardin"){
@@ -228,6 +319,7 @@ function deplacer(e) {
         })
     }
 
+    //MASTERBAR
     if(numeroPiece != "masterbar"){
         document.querySelector(".journal").style.display = "none";
     }
@@ -246,6 +338,7 @@ function deplacer(e) {
         })
     }
 
+    //JARDIN
     if(numeroPiece != "jardin"){
         document.querySelector(".cle1").style.display = "none";
     }
@@ -266,6 +359,7 @@ function deplacer(e) {
         })
     }
     
+    //BALLROOME
     if(numeroPiece == "ballroome"){
         if(balFirst == "true" && journalInventaire=="true"){
             typeWriter("Soudainement, vous entendez du bruit provenant de la salle de bal. Vous vous diriger vers la sources jusqu’à que Vous vous retrouviez nez à nez avec un horrible monstre. Son corps était élancé et il avait une peau grise brulée, là où il devrait avoir des yeux et une bouche, il n’y avait rien. Le monstre ne semblant pas réalisé que vous vous trouvez ici, se mit à bouger vers votre direction petit à petit, son bras s’allonge de plus en plus vers votre direction. ",1,0);
@@ -283,9 +377,11 @@ function deplacer(e) {
            }
         })
     }
+
+    //BALLROOMO
     if(numeroPiece == "ballroomo"){
-        if(balEFirst == "true"){
-            typeWriter(" En fouillant la salle de bal, vous remarqué la présence d’une note à terre la où le monstre se trouvait. La note se trouvait être adressée à un certain Bence Korhonen. Cette note était remplie de mot d’amours à son égard.",1,0)
+        if(balEFirst == "true" && balFirst == "false"){
+            typeWriter(" En fouillant la salle de bal, vous remarqué la présence d’une note à terre la où le monstre se trouvait. La note se trouvait être adressée à un certain Bence Korhonen. Cette note était remplie de mot d’amours à son égard. Apparement on aurait même fait une statue à son effigie",1,0)
             balEFirst = "false"
         }
         elementclickables.forEach((piece)=> {
@@ -297,6 +393,8 @@ function deplacer(e) {
            }
         })
     }
+
+    //ROOMHALL
     if(numeroPiece == "roomhall"){
         elementclickables.forEach((piece)=> {
            if(piece.id == "room1" || piece.id == "room2" || piece.id == "room3" || piece.id == "dinnern"){
@@ -307,6 +405,8 @@ function deplacer(e) {
            }
         })
     }
+
+    //ROOM1
     if(numeroPiece == "room1"){
        /*  if (room1FirstTime == "true"){
         typeWriter("Vous semblez être seul dans ce manoir, vous ne trouvai aucune âme vivante malgré vos recherches, épuiser, vous vous reposez dans votre chambre d’invitée. Durant votre courte sieste, vous faite un rêve à propos de vous enfant ouvrant l’une des portes du manoir, au-delà de cette porte vous voyais la scène d’autre enfant piégé sous un trappe en pleur. Vous vous réveiller de ce cauchemar, toujours dans le manoir. Ne trouvant toujours aucune âme vivante, vous vous mettez à la recherche d’une sortie. ", 0.5, 0)
@@ -322,10 +422,11 @@ function deplacer(e) {
         })
     }
 
+    //ROOM2
     if(numeroPiece != "room2"){
         document.querySelector(".lampe").style.display = "none";
         }
-
+    
     if(numeroPiece == "room2"){
         if(lampe == "false"){
             document.querySelector(".lampe").style.display = "block";
@@ -341,7 +442,7 @@ function deplacer(e) {
     }
 
    
-
+    //ROOM3
     if(numeroPiece == "room3"){
         
         elementclickables.forEach((piece)=> {

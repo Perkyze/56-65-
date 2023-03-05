@@ -4,6 +4,15 @@
   background-color: grey;
 }
 
+.map div:hover{
+  cursor:pointer;
+}
+
+
+p{
+  margin: 0;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -84,7 +93,7 @@ body{
 .deathScreen{
   display: none;
   display: absolute;
-  background-color: rgb(78, 10, 10);
+  background-color: rgb(126, 28, 28);
   font-size: 60px;
   text-align: center;
   width: 100%;
@@ -95,6 +104,83 @@ body{
 .deathText{
   margin: 0;
   padding: 10%;
+}
+
+.deathScreen2{
+  display: none;
+  display: absolute;
+  background-color: rgb(126, 28, 28);
+  font-size: 50px;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  z-index: 99999;
+}
+
+.deathText2{
+  margin: 0;
+  padding: 10%;
+}
+
+.endScreen{
+  display: none;
+  background-color: rgb(126, 52, 52);
+  font-size: 60px;
+  text-align: center;
+  width: 100%;
+  height: 1080px;
+}
+
+
+.endText1{
+  margin-right: 5%;
+  margin-left: 5%;
+  display: block;
+}
+
+.endText2{
+  margin-right: 5%;
+  margin-left: 5%;
+  display: none;
+}
+
+.endText3{
+  margin-right: 5%;
+  margin-left: 5%;
+  display: none;
+}
+.endText4{
+  margin-right: 5%;
+  margin-left: 5%;
+  display: none;
+}
+
+.revele{
+  margin-right: 5%;
+  margin-left: 5%;
+  font-size: 50px;
+  display: none;
+}
+
+
+.cacher{
+  margin-right: 5%;
+  margin-left: 5%;
+  font-size: 50px;
+  display: none;
+}
+
+.btnEnd{
+  position: absolute !important;
+  top: 85%;
+  left: 75%;
+}
+
+.btnrejouer2{
+  display: none;
+  position: absolute !important;
+  top: 90%;
+  left: 40%;
 }
 
 .btnrejouer{
@@ -271,6 +357,44 @@ MINIMAP -------------------------------------
   left: 56%;
 }
 
+#yesbutton{
+  display: none;
+  position: absolute;
+  font-size: 20px;
+  top: 85%;
+  left: 34%;
+  padding: 1%;
+  
+}
+
+#nobutton{
+  display: none;
+  position: absolute;
+  font-size: 20px;
+  top: 85%;
+  left: 56%;
+  padding: 1%;
+}
+
+#henry{
+  display: none;
+  position: absolute;
+  font-size: 20px;
+  top: 85%;
+  left: 25%;
+  padding: 1%;
+  
+}
+
+#bence{
+  display: none;
+  position: absolute;
+  font-size: 20px;
+  top: 85%;
+  left: 55%;
+  padding: 1%;
+}
+
 .cle1{
   display: none;
   position: absolute;
@@ -298,10 +422,10 @@ MINIMAP -------------------------------------
 .lampe{
   display: none;
   position: absolute;
-  left: 29%;
-  top: 45%;
-  height: 10%;
-  width: 2%;
+  left: 19%;
+  top: 75%;
+  height: 7%;
+  width: 7%;
   z-index: 1;
   background-color: gray;
   opacity: 0%;
@@ -315,6 +439,17 @@ MINIMAP -------------------------------------
   height: 60%;
   width: 15%;
   z-index: 1;
+  background-color: gray;
+  opacity: 0%;
+}
+
+.coffre{
+  display: block;
+  position: absolute;
+  left: 84%;
+  top: 65%;
+  height: 33%;
+  width: 10%;
   background-color: gray;
   opacity: 0%;
 }
@@ -342,13 +477,13 @@ MINIMAP -------------------------------------
   z-index: -1;
 }
 
-.item2{
+.item2img{
   display: none;
   position: fixed;
-  top: 55%;
+  top: 45%;
   left: 5%;
   width: 10%;
-  height: 10%;
+  height: 13%;
   z-index: 1;
   z-index: -1;
 }
@@ -380,7 +515,7 @@ MINIMAP -------------------------------------
   right: 10%;
   width: 70%;
   height: 70%;
-  z-index: -1;
+  z-index: -2;
   display: none;
 }
 
@@ -408,25 +543,33 @@ MINIMAP -------------------------------------
 FOOTER-------------------------
 */
 
+.btnfooter{
+  position: absolute;
+  display: block;
+  visibility: hidden;
+  width: 12%;
+  top: 70%;
+  left: 78%;
+  margin: 0;
+}
+
+.footer-button{
+  width: 100% !important;
+}
+
+
 footer{
-  display: flex;
-  position: fixed;
+  position: absolute;
   top: 70%;
   left: 20%;
   z-index: -1;
 }
 
-textarea{
-  border-style: solid;
-  box-shadow: var(--box-shadow);
-  width: 59em;
-  height: 17.5em;
-}
-
 .txtbox{
+  display: none;
   border-style: solid;
   box-shadow: var(--box-shadow);
-  width: 50em;
+  width: 70%;
   height: 15em;
   overflow: auto;
   background-color: #fee6e3;
@@ -467,14 +610,12 @@ textarea{
   top: -2px;
   transform: translate(8px, 8px);
   transition: transform .2s ease-out;
-  z-index: -1;
+  z-index: 0;
 }
 
 /*
 BOUTON--------------------
 */
-
-
 .btn {
   align-items: center;
   background-color: #fee6e3;
