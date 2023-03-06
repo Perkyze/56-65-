@@ -82,12 +82,14 @@ function showTexte1(){
     typeWriter("Vous vous êtes mis à couvert derrière l’un des piliers de la salle de bal vous bouchant la bouche et en vous recroquevillant sur vous-même pour faire le moins de bruit de possible. Après un certain moment le monstre se mit à partir et vous sortez de votre cachette.",2,0);
     document.getElementById("ouibutton").style.display = "none";
     document.getElementById("nonbutton").style.display = "none";
+    document.querySelector(".monstre").style.display = "none";
 }
 function showDeath1(){
     document.getElementById("ouibutton").style.display = "none";
     document.getElementById("nonbutton").style.display = "none";
     document.querySelector(".deathScreen").style.display = "block";
     document.querySelector(".btnfooter").style.visibility = "hidden";
+    
 }
 function rejouer(){
     document.querySelector(".deathScreen").style.display = "none";
@@ -266,8 +268,6 @@ function deplacer(e) {
         if(intro != "true"){
         typeWriter("Vous vous réveiller au hall d’entrée de l’hôtel sans aucune idée de ce qui c’était passez la veille avant de vous endormir. En essayant de vous rappeler ce qui vous êtes arrivé, vous remarqué que le manoir semblé différent : les décors semblaient plus vieux qu’auparavant, et qu’il n’y avait personne au hall d’entrée, même pas un seul son en provenance des différentes pièces du manoir. Vous essayer de sortir par la porte d’entrée, mais la porte semble bloqué, c’était la même chose pour les fenêtres. De plus, en regardant à travers celle-ci il n’y avait que du brouillard. En pleine panique, vous vous aventuré dans le manoir afin de trouver au moins le maitre d’hôtel. Pendant votre recherche, vous avez entendu un son provenant de la chambre du maitre au nord de l'hôtel ", 0.5,0);
         intro="true";
-        document.querySelector(".txtbox").style.display = "block";
-        document.querySelector(".btnfooter").style.visibility = "visible";
         }
         elementclickables.forEach((piece)=> {
            if(piece.id == "dinnern"){
@@ -365,6 +365,7 @@ function deplacer(e) {
             typeWriter("Vous vous diriger vers la sources jusqu’à que Vous vous retrouviez nez à nez avec un horrible monstre. Son corps était élancé et il avait une peau grise brulée, là où il devrait avoir des yeux et une bouche, il n’y avait rien. Le monstre ne semblant pas réalisé que vous vous trouvez ici, se mit à bouger vers votre direction petit à petit, son bras s’allonge de plus en plus vers votre direction. ",1,0);
             document.getElementById("ouibutton").style.display = "flex";
             document.getElementById("nonbutton").style.display = "flex";
+            document.querySelector(".monstre").style.display = "block";
             balFirst = "false";           
         }
 
