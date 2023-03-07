@@ -20,7 +20,7 @@ endBtn = 0;
 
 function changeScr() {
 if(cle1Inventaire == "true" && lampe == "false"){
-    document.getElementById("masterbar-photo").src="images/masterbarouvert.png";
+    document.getElementById("masterbar-photo").src="images/masterbarouvert.webp";
     console.log("ouvert")
     document.querySelector(".itemcle1").style.display = "none";
     typeWriter("Il fait très sombre êtes vous sûr de vouloir y aller?",2,0);
@@ -79,7 +79,7 @@ function showElement() {
 EVENT ------------------------
   */
 function showTexte1(){
-    typeWriter("Vous vous êtes mis à couvert derrière l’un des piliers de la salle de bal vous bouchant la bouche et en vous recroquevillant sur vous-même pour faire le moins de bruit de possible. Après un certain moment le monstre se mit à partir et vous sortez de votre cachette.",2,0);
+    typeWriter("Vous vous êtes mis à couvert derrière l’un des piliers de la salle de bal vous bouchant la bouche et en vous recroquevillant sur vous-même pour faire le moins de bruit de possible. Après un certain moment le monstre partit et vous sortez de votre cachette.",2,0);
     document.getElementById("ouibutton").style.display = "none";
     document.getElementById("nonbutton").style.display = "none";
     document.querySelector(".monstre").style.display = "none";
@@ -160,7 +160,7 @@ function showCacher(){
 TYPING SCRIPT ------------------------
 */
 
-function typeWriter(texte,vitesse,position) {
+    function typeWriter(texte,vitesse,position) {
     if(position==0){
         let br1 = document.createElement("br");
         document.getElementById("textebox").appendChild(br1);
@@ -203,7 +203,7 @@ function cle2click(){
 function journalClick() {
     
     if(journalInventaire != "true"){
-        typeWriter("En fouillant la chambre du maitre d’hôtel, vous trouvez une page d’un hebdomadaire. Il se rapporte à un incident qui a eu lieu en 1875, un homme nommés Henry Tòth fut pendu pour une série de meurtre d’enfant innocent. En continuant de lire vous observer les lettres commençais lentement à fondre jusqu’à qu’elles disparaissent complétement de la page. Soudainement, vous entendez du bruit provenant de la salle de bal.", 1, 0);
+        typeWriter("En fouillant la chambre du maitre d’hôtel, vous trouvez une page d’un hebdomadaire. Il se rapporte à un incident qui a eu lieu en 1875, un homme nommés Henry Tòth fut pendu pour une série de meurtre d’enfants innocents. En continuant de lire vous observer les lettres commençais lentement à fondre jusqu’à qu’elles disparaissent complétement de la page. Soudainement, vous entendez du bruit provenant de la salle de bal.", 1, 0);
         journalInventaire="true";
         document.querySelector(".lampe").style.display = "none";
     }
@@ -219,7 +219,7 @@ function lampeClick(){
 
 function coffreClick(){
     if(cle2Inventaire == "true"){
-        typeWriter("Le code a bien fonction. À l’intérieur vous trouvez un journal intime abimé. Dans celui-ci vous apprenez l’histoire d’amour entre Bence Korhonen et Henry Tòth le tueur en série. Vous y trouvez aussi l’affreux récit détaillé des meurtres des enfants, et du plaisir que le meurtrier pris à tuer ses victimes. Vous pensez à haute voix que Henry Tòth est un monstre. D’un seul coup, la radio qui ne fonctionnais pas jusque-là se mit soudainement à fonctionner. Vous entendez une voix à l’intérieur répétant « Ce n’était pas moi, non c’était moi » jusqu’à qu’elle dysfonctionne.",5,0)
+        typeWriter("Le code a bien fonctionné. À l’intérieur vous trouvez un journal intime abimé. Dans celui-ci vous apprenez l’histoire d’amour entre Bence Korhonen et Henry Tòth le tueur en série. Vous y trouvez aussi l’affreux récit détaillé des meurtres des enfants, et du plaisir que le meurtrier pris à tuer ses victimes. Vous pensez à haute voix que Henry Tòth est un monstre. D’un seul coup, la radio qui ne fonctionnais pas jusque-là se mit soudainement à fonctionner. Vous entendez une voix à l’intérieur répétant « Ce n’était pas moi, non c’était moi » jusqu’à qu’elle dysfonctionne.",5,0)
 
         document.querySelector(".coffre").style.display = "none";
         cle2Inventaire = "false";
@@ -267,9 +267,10 @@ function deplacer(e) {
     //HALL
     if(numeroPiece == "hall"){
         if(intro != "true"){
-        typeWriter("Vous vous réveiller au hall d’entrée de l’hôtel sans aucune idée de ce qui c’était passez la veille avant de vous endormir. En essayant de vous rappeler ce qui vous êtes arrivé, vous remarqué que le manoir semblé différent : les décors semblaient plus vieux qu’auparavant, et qu’il n’y avait personne au hall d’entrée, même pas un seul son en provenance des différentes pièces du manoir. Vous essayer de sortir par la porte d’entrée, mais la porte semble bloqué, c’était la même chose pour les fenêtres. De plus, en regardant à travers celle-ci il n’y avait que du brouillard. En pleine panique, vous vous aventuré dans le manoir afin de trouver au moins le maitre d’hôtel. Pendant votre recherche, vous avez entendu un son provenant de la chambre du maitre au nord de l'hôtel ", 0.5,0);
+        typeWriter("Vous vous réveillez au hall d'entrée de l'hôtel sans aucune idée de ce qui c'était passez la veille avant de vous endormir. En essayant de vous rappeler ce qui vous êtes arrivé, vous remarquez que le manoir semble différent : les décors semblaient plus vieux qu'auparavant, et il n'y avait personne au hall d'entrée, même pas un seul son en provenance des différentes pièces du manoir. Vous essayez de sortir par la porte d'entrée, mais la porte semble bloquée, c'était la même chose pour les fenêtres. De plus, en regardant à travers celle-ci il n'y avait que du brouillard. En pleine panique, vous vous aventurez dans le manoir afin de trouver au moins le maitre d'hôtel. Pendant votre recherche, vous avez entendu un son provenant de la chambre des maîtres au nord de l'hôtel.", 1,0);
         intro="true";
         }
+        
         elementclickables.forEach((piece)=> {
            if(piece.id == "dinnern"){
             piece.dataset.deplaceable = "true";
@@ -365,7 +366,7 @@ function deplacer(e) {
     //BALLROOME
     if(numeroPiece == "ballroome"){
         if(balFirst == "true" && journalInventaire=="true"){
-            typeWriter("Vous vous diriger vers la sources jusqu’à que Vous vous retrouviez nez à nez avec un horrible monstre. Son corps était élancé et il avait une peau grise brulée, là où il devrait avoir des yeux et une bouche, il n’y avait rien. Le monstre ne semblant pas réalisé que vous vous trouvez ici, se mit à bouger vers votre direction petit à petit, son bras s’allonge de plus en plus vers votre direction. ",1,0);
+            typeWriter("Vous vous dirigez vers la source jusqu’à que vous vous retrouviez nez à nez avec un horrible monstre. Son corps était élancé et il avait une peau grise brulée. Le monstre ne semblant pas réaliser que vous vous trouvez ici, se mit à bouger vers votre direction petit à petit, son bras s’allonge de plus en plus vers votre direction.",1,0);
             document.getElementById("ouibutton").style.display = "flex";
             document.getElementById("nonbutton").style.display = "flex";
             document.querySelector(".monstre").style.display = "block";
