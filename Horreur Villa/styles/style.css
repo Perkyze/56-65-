@@ -475,7 +475,7 @@ MINIMAP -------------------------------------
   top: 45%;
   left: 5%;
   width: 10%;
-  height: 10%;
+  height: 15%;
   z-index: 1;
   z-index: -1;
 }
@@ -491,13 +491,13 @@ MINIMAP -------------------------------------
   z-index: -1;
 }
 
-.item3{
+.item3img{
   display: none;
-  position: fixed;
+  position: absolute;
   top: 65%;
-  left: 5%;
-  width: 10%;
-  height: 10%;
+  left: 2%;
+  width: 15%;
+  height: 12%;
   z-index: 1;
   z-index: -1;
 }

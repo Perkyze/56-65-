@@ -211,6 +211,7 @@ function journalClick() {
 }
 
 function lampeClick(){
+    document.querySelector(".item3img").style.display = "block";
     typeWriter("Vous avez trouvé une lampe torche", 1, 0);
         lampe="true";
         document.querySelector(".lampe").style.display = "none";
