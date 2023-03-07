@@ -323,11 +323,13 @@ function deplacer(e) {
     //MASTERBAR
     if(numeroPiece != "masterbar"){
         document.querySelector(".journal").style.display = "none";
+        document.querySelector(".armoire").style.display = "none";
     }
 
     if(numeroPiece == "masterbar"){
         
         document.querySelector(".journal").style.display = "block";
+        document.querySelector(".armoire").style.display = "block";
         
         elementclickables.forEach((piece)=> {
            if(piece.id == "salon"){

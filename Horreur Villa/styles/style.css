@@ -435,7 +435,7 @@ MINIMAP -------------------------------------
 }
 
 .armoire{
-  display: block;
+  display: none;
   position: absolute;
   left: 5%;
   top: 10%;
@@ -574,7 +574,19 @@ footer{
   border-radius: 8px;
 }
 
+@media (max-height: 1000px) {
+  .deathText{
+    font-size: 40px;
+  }
+
+  .deathText2{
+    font-size: 40px;
+  }
+}
 @media (max-height: 900px) {
+
+  
+
   .endText1{
     margin-right: 5%;
     margin-left: 5%;
