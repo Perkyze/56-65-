@@ -15,6 +15,7 @@ firstPrompt = "true";
 armoireUnlock = "false";
 cle1Used = "false";
 coffreUnlocked = "false";
+noteInventaire = "false";
 endBtn = 0;
 
 
@@ -191,12 +192,15 @@ function cle1click() {
 }
 
 function cle2click(){
-    
-    document.querySelector(".item2img").style.display = "block";
-    document.querySelector(".cle2").style.display = "none";
-    cle2Inventaire = "true";
-    console.log("cle2 unlocked")
-    typeWriter("Tu as trouvé une note montrant un code et les mots « menteur » et « monstre » répéter sur l'entièreté de la page.",1,0)
+    if (cle2Inventaire != "true"){
+        document.querySelector(".item2img").style.display = "block";
+        document.getElementById("masterbar-photo").src="images/masterbarouvert.webp";
+        document.querySelector(".cle2").style.display = "none";
+        document.querySelector(".armoire").style.display = "none";
+        cle2Inventaire = "true";
+        console.log("cle2 unlocked")
+        typeWriter("Tu as trouvé une note montrant un code et les mots « menteur » et « monstre » répéter sur l'entièreté de la page.",1,0)
+    }
 }
 
 
@@ -218,18 +222,17 @@ function lampeClick(){
 }
 
 function coffreClick(){
-    if(cle2Inventaire == "true"){
+    if(coffreUnlocked == "false"){
         typeWriter("Le code a bien fonctionné. À l’intérieur vous trouvez un journal intime abimé. Dans celui-ci vous apprenez l’histoire d’amour entre Bence Korhonen et Henry Tòth le tueur en série. Vous y trouvez aussi l’affreux récit détaillé des meurtres des enfants, et du plaisir que le meurtrier pris à tuer ses victimes. Vous pensez à haute voix que Henry Tòth est un monstre. D’un seul coup, la radio qui ne fonctionnais pas jusque-là se mit soudainement à fonctionner. Vous entendez une voix à l’intérieur répétant « Ce n’était pas moi, non c’était moi » jusqu’à qu’elle dysfonctionne.",5,0)
 
         document.querySelector(".coffre").style.display = "none";
-        cle2Inventaire = "false";
         coffreUnlocked = "true";
     }
 }
 
 
 
-  /*
+/*
 DÉPLACEMENT MINIMAP -------
 */
 const gamePhoto = document.querySelectorAll(".imggame");
@@ -309,8 +312,12 @@ function deplacer(e) {
         })
     }
 
+    if(numeroPiece != "salon"){
+        document.querySelector(".coffre").style.display = "none";
+    }
     //SALON
     if(numeroPiece == "salon"){
+        document.querySelector(".coffre").style.display = "block";
         elementclickables.forEach((piece)=> {
            if(piece.id == "masterbar" || piece.id == "dinners" || piece.id == "jardin"){
             piece.dataset.deplaceable = "true";
@@ -328,10 +335,10 @@ function deplacer(e) {
     }
 
     if(numeroPiece == "masterbar"){
-        
+        if(cle2Inventaire == "false"){
         document.querySelector(".journal").style.display = "block";
         document.querySelector(".armoire").style.display = "block";
-        
+        }
         elementclickables.forEach((piece)=> {
            if(piece.id == "salon"){
             piece.dataset.deplaceable = "true";
@@ -349,7 +356,7 @@ function deplacer(e) {
     
     if(numeroPiece == "jardin"){
 
-        if(balFirst == "false" && cle1Inventaire == "false"){
+        if(balFirst == "false" && cle1Inventaire == "false" && armoireUnlock != "true" && cle2Inventaire =="false"){
         document.querySelector(".cle1").style.display = "block";
         }
 
